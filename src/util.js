@@ -51,7 +51,9 @@ tagsInput.factory('tiUtil', function($timeout, $q) {
     self.defaultComparer = function(a, b) {
         // I'm aware of the internationalization issues regarding toLowerCase()
         // but I couldn't come up with a better solution right now
-        return self.safeToString(a).toLowerCase() === self.safeToString(b).toLowerCase();
+        // kharada modified 
+        // return self.safeToString(a).toLowerCase() === self.safeToString(b).toLowerCase();
+        return self.safeToString(a) === self.safeToString(b);
     };
 
     self.safeHighlight = function(str, value) {
